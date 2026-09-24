@@ -42,13 +42,13 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          hugo-version: '0.155.0'
           extended: true
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
       - name: Build with Hugo
-        run: |
-          hugo \
-            --gc --minify \
-            --baseURL "${{ steps.deployment.outputs.page_url }}"
+        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
