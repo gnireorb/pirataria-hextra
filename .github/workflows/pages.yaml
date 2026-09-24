@@ -36,11 +36,11 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v7
         with:
-          go-version: '1.22'
+          go-version: '1.23'
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           extended: true
@@ -50,7 +50,7 @@ jobs:
             --gc --minify \
             --baseURL "${{ steps.deployment.outputs.page_url }}"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
