@@ -1,0 +1,70 @@
+title: Pirataria
+
+enableGitInfo: false
+
+module:
+  imports:
+  - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+defaultContentLanguage: pt
+defaultContentLanguageInSubdir: true
+languages:
+  pt:
+    contentDir: content/
+    disabled: false
+    languageCode: pt
+    languageDirection: ltr
+    languageName: Português
+    weight: 1
+
+menu:
+  main:
+    - name: Documentação
+      pageRef: /docs
+      weight: 1
+    - name: Sobre
+      pageRef: /sobre
+      weight: 2
+    - name: Pesquisa
+      weight: 3
+      params:
+        type: search
+
+params:
+  description: Esta megathread tem como objetivo atuar como uma valiosa fonte para explorar uma ampla gama de recursos excepcionais, incluindo sites, aplicativos, ferramentas, etc. 
+
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: images/logo.svg
+      dark: images/logo-dark.svg
+    width: wide
+
+  page:
+    width: normal
+
+  theme:
+    default: system
+    displayToggle: true
+
+  footer:
+    displayCopyright: false
+    displayPoweredBy: false
+
+  displayUpdatedDate: true
+  dateFormat: "2 de January de 2006"
+
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      index: content
